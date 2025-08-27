@@ -1,472 +1,434 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Feliz Aniversario</title>
     <style>
-      body {
-        background: linear-gradient(to right, #ffdde1, #ee9ca7);
-        font-family: "Arial", sans-serif;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        color: #5c2c2c;
-      }
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            color: #5c2c2c;
+        }
 
-      h2 {
-        color: #c0392b;
-        margin-top: 30px;
-      }
+        h2 {
+            color: #c0392b;
+            margin-top: 30px;
+        }
 
-      .main-carousel {
-        position: relative;
-        width: 90vw;
-        max-width: 700px;
-        margin: 30px auto 30px auto;
-        overflow: hidden;
-        border-radius: 18px;
-      }
+        .main-carousel {
+            position: relative;
+            width: 90vw;
+            max-width: 700px;
+            margin: 30px auto 30px auto;
+            overflow: hidden;
+            border-radius: 18px;
+        }
 
-      .main-carousel img {
-        width: 100%;
-        height: 600px;
-        max-height: 80vh;
-        object-fit: contain;
-        border-radius: 18px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        display: none;
-        background: #fff;
-      }
-
-      .main-carousel img.active {
-        display: block;
-      }
-
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-        font-size: 32px;
-        padding: 5px 18px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 2;
-        color: #c0392b;
-      }
-
-      .carousel-btn.left {
-        left: 10px;
-      }
-
-      .carousel-btn.right {
-        right: 10px;
-      }
-
-      /* Texto romántico */
-      .romantic-text {
-        background: rgba(255, 255, 255, 0.85);
-        border-radius: 15px;
-        max-width: 750px;
-        margin: 0 auto 40px auto;
-        padding: 22px 18px 16px 18px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-        font-size: 18px;
-      }
-
-      .romantic-text p {
-        margin-bottom: 16px;
-      }
-
-      .romantic-text .cita {
-        font-style: italic;
-        color: #c0392b;
-        font-size: 17px;
-        margin-bottom: 18px;
-      }
-
-      /* Línea de tiempo visual */
-      .timeline-carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 38px 0 16px 0;
-        width: 100vw;
-        overflow-x: auto;
-      }
-
-      .timeline-btn {
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-        font-size: 24px;
-        padding: 5px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        color: #c0392b;
-        margin: 0 5px;
-      }
-
-      .timeline-track {
-        display: flex;
-        gap: 18px;
-        transition: transform 0.4s;
-        width: 100%;
-        padding-bottom: 10px;
-      }
-
-      .timeline-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 154px;
-        max-width: 154px;
-        flex: 0 0 auto;
-      }
-
-      .timeline-item img {
-        width: 132px;
-        height: 132px;
-        object-fit: cover;
-        border-radius: 18px;
-        border: 4px solid #ee9ca7;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-        background: #fff;
-        margin-bottom: 7px;
-        transition: border 0.3s;
-      }
-
-      .timeline-caption {
-        font-size: 15px;
-        color: #5c2c2c;
-        background: rgba(255, 255, 255, 0.85);
-        border-radius: 10px;
-        padding: 4px 8px;
-        text-align: center;
-        min-height: 40px;
-      }
-
-      @media (max-width: 900px) {
         .main-carousel img {
-          height: 350px;
+            width: 100%;
+            height: 600px;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            display: none;
+            background: #fff;
+        }
+
+        .main-carousel img.active {
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 32px;
+            padding: 5px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            color: #c0392b;
+        }
+
+        .carousel-btn.left {
+            left: 10px;
+        }
+
+        .carousel-btn.right {
+            right: 10px;
+        }
+
+        /* Texto romántico */
+        .romantic-text {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+            padding: 22px 18px 16px 18px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            font-size: 18px;
+        }
+
+        .romantic-text p {
+            margin-bottom: 16px;
+        }
+
+        .romantic-text .cita {
+            font-style: italic;
+            color: #c0392b;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        /* Línea de tiempo visual */
+        .timeline-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 38px 0 16px 0;
+            width: 100vw;
+            overflow-x: auto;
+        }
+
+        .timeline-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 24px;
+            padding: 5px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #c0392b;
+            margin: 0 5px;
+        }
+
+        .timeline-track {
+            display: flex;
+            gap: 18px;
+            transition: transform 0.4s;
+            width: 100%;
+            padding-bottom: 10px;
         }
 
         .timeline-item {
-          min-width: 100px;
-          max-width: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 154px;
+            max-width: 154px;
+            flex: 0 0 auto;
         }
 
         .timeline-item img {
-          width: 70px;
-          height: 70px;
+            width: 132px;
+            height: 132px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 4px solid #ee9ca7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            background: #fff;
+            margin-bottom: 7px;
+            transition: border 0.3s;
         }
 
         .timeline-caption {
-          font-size: 11px;
-          min-height: 24px;
-        }
-      }
-
-      /* Corazones flotantes */
-      .hearts {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        overflow: hidden;
-      }
-
-      .heart {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: red;
-        transform: rotate(45deg);
-        animation: float 6s infinite;
-      }
-
-      .heart::before,
-      .heart::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: red;
-        border-radius: 50%;
-      }
-
-      .heart::before {
-        top: -10px;
-        left: 0;
-      }
-
-      .heart::after {
-        left: -10px;
-        top: 0;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0) rotate(45deg);
-          opacity: 1;
+            font-size: 15px;
+            color: #5c2c2c;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 4px 8px;
+            text-align: center;
+            min-height: 40px;
         }
 
-        100% {
-          transform: translateY(-100vh) rotate(45deg);
-          opacity: 0;
+        @media (max-width: 900px) {
+            .main-carousel img {
+                height: 350px;
+            }
+
+            .timeline-item {
+                min-width: 100px;
+                max-width: 110px;
+            }
+
+            .timeline-item img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .timeline-caption {
+                font-size: 11px;
+                min-height: 24px;
+            }
         }
-      }
+
+        /* Corazones flotantes */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 6s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .btn-audio {
+            margin: 30px 0 18px 0;
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-size: 1rem;
+            background: #fff7f7;
+            color: #c0392b;
+            border: 1.5px solid #fbdada;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 0.5px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-audio:hover,
+        .btn-audio:focus {
+            background: #ffd6d3;
+            color: #8b2323;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <!-- AUDIO de YouTube: ver NOTA abajo -->
-    <!-- No puedes reproducir directamente un video de YouTube como audio con la etiqueta <audio>. Debes descargar el mp3 y subirlo a tu repo o usar un enlace mp3 directo. -->
-    <!-- Si solo quieres mostrar el video/música embebida: -->
-    <iframe width="0" height="0" style="display:none;" src="https://www.youtube.com/embed/p_1Osm5xE5Y?autoplay=1&loop=1&playlist=p_1Osm5xE5Y" allow="autoplay"></iframe>
-    <!-- Si subes el mp3, reemplaza el <audio> de abajo por tu ruta mp3 -->
+<body>
+
+    <audio id="miAudio" loop>
+        <source src="https://github.com/MonkeyDmax/Aniversario/raw/main/musica/SiSupieras.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <button class="btn-audio" onclick="document.getElementById('miAudio').play()">🎵 Escuchar Canción</button>
 
     <h2>💖 Feliz Aniversario 💖</h2>
 
     <!-- Carrusel principal de 10 fotos -->
     <div class="main-carousel" id="mainCarousel">
-      <button class="carousel-btn left" onclick="plusMainSlide(-1)">
-        &#8592;
-      </button>
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0219.JPG"
-        class="active"
-        alt="Foto 1"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0220.JPG"
-        alt="Foto 2"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0222.JPG"
-        alt="Foto 3"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0232.JPG"
-        alt="Foto 4"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0240.JPG"
-        alt="Foto 5"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0242.JPG"
-        alt="Foto 6"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0245.JPG"
-        alt="Foto 7"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0246.JPG"
-        alt="Foto 8"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0248.JPG"
-        alt="Foto 9"
-      />
-      <img
-        src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0984.JPG"
-        alt="Foto 10"
-      />
-      <button class="carousel-btn right" onclick="plusMainSlide(1)">
-        &#8594;
-      </button>
+        <button class="carousel-btn left" onclick="plusMainSlide(-1)">
+            &#8592;
+        </button>
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0219.JPG" class="active" alt="Foto 1" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0220.JPG" alt="Foto 2" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0222.JPG" alt="Foto 3" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0232.JPG" alt="Foto 4" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0240.JPG" alt="Foto 5" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0242.JPG" alt="Foto 6" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0245.JPG" alt="Foto 7" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0246.JPG" alt="Foto 8" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0248.JPG" alt="Foto 9" />
+        <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0984.JPG" alt="Foto 10" />
+        <button class="carousel-btn right" onclick="plusMainSlide(1)">
+            &#8594;
+        </button>
     </div>
 
     <!-- Texto romántico personalizado -->
     <div class="romantic-text">
-      <p>
-        Eres mi mundo, mi todo, lo que siempre soñé.<br />
-        Desde el momento en que llegaste a mi vida, todo cobró sentido. No soy
-        perfecto, lo sé, y a veces me equivoco más de lo que debería. Pero no
-        quiero ponerte excusas ni pretextos, porque tú mereces lo mejor de mí y
-        lucharé cada día para dártelo.
-      </p>    
-      <p>
-        Quiero que sepas que estoy decidido a ser mejor, no solo por mí, sino
-        porque tú lo mereces. Porque quiero ganarme tu confianza y construir
-        juntos una familia llena de amor, respeto y felicidad.
-      </p>
-      <p>
-        A tu lado soy feliz, a tu lado todo es posible. Gracias por ser mi
-        compañera, mi amiga, mi amor. Gracias por cada risa, cada abrazo, cada
-        momento. Lucharé siempre por nosotros, por lo que estamos construyendo y
-        por todos los sueños que tenemos juntos.
-      </p>
-      <p class="cita">
-        "El amor se compone de una sola alma que habita en dos cuerpos." <br />—
-        Aristóteles
-      </p>
-      <p>
-        Te amo hoy y siempre ❤️. Eres mi mayor alegría, mi mejor elección, mi
-        hogar. ¡Feliz mesesaurio, amor de mi vida! Prometo seguir creciendo,
-        aprendiendo y amándote cada día más.
-      </p>
-      <p class="cita">
-        "Amar no es mirarse el uno al otro, es mirar juntos en la misma
-        dirección." <br />— Antoine de Saint-Exupéry
-      </p>
+        <p>
+            Eres mi mundo, mi todo, lo que siempre soñé.<br />
+            Desde el momento en que llegaste a mi vida, todo cobró sentido. No soy
+            perfecto, lo sé, y a veces me equivoco más de lo que debería. Pero no
+            quiero ponerte excusas ni pretextos, porque tú mereces lo mejor de mí y
+            lucharé cada día para dártelo.
+        </p>
+        <p>
+            Quiero que sepas que estoy decidido a ser mejor, no solo por mí, sino
+            porque tú lo mereces. Porque quiero ganarme tu confianza y construir
+            juntos una familia llena de amor, respeto y felicidad.
+        </p>
+        <p>
+            A tu lado soy feliz, a tu lado todo es posible. Gracias por ser mi
+            compañera, mi amiga, mi amor. Gracias por cada risa, cada abrazo, cada
+            momento. Lucharé siempre por nosotros, por lo que estamos construyendo y
+            por todos los sueños que tenemos juntos.
+        </p>
+        <p class="cita">
+            "El amor se compone de una sola alma que habita en dos cuerpos." <br />—
+            Aristóteles
+        </p>
+        <p>
+            Te amo hoy y siempre ❤️. Eres mi mayor alegría, mi mejor elección, mi
+            hogar. ¡Feliz mesesaurio, amor de mi vida! Prometo seguir creciendo,
+            aprendiendo y amándote cada día más.
+        </p>
+        <p class="cita">
+            "Amar no es mirarse el uno al otro, es mirar juntos en la misma
+            dirección." <br />— Antoine de Saint-Exupéry
+        </p>
     </div>
 
     <h3>🕰️ Nuestra Historia</h3>
     <div class="timeline-carousel">
-      <button class="timeline-btn left" onclick="plusTimeline(-1)">
-        &#8592;
-      </button>
-      <div class="timeline-track" id="timelineTrack">
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/Foto1.JPEG"
-            alt="2020"
-          />
-          <div class="timeline-caption">
-            <strong>2020:</strong> Inicia nuestra historia 💌
-          </div>
+        <button class="timeline-btn left" onclick="plusTimeline(-1)">
+            &#8592;
+        </button>
+        <div class="timeline-track" id="timelineTrack">
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/Foto1.JPEG" alt="2020" />
+                <div class="timeline-caption">
+                    <strong>2020:</strong> Inicia nuestra historia 💌
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/Foto2.JPEG" alt="2021" />
+                <div class="timeline-caption">
+                    <strong>2021:</strong> Pandemia no nos dejo ver muy seguido 😷
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_6008.JPEG" alt="2022" />
+                <div class="timeline-caption">
+                    <strong>2022:</strong> Por fin salidas y podia visitarte 🥰
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_2251.JPEG" alt="2023" />
+                <div class="timeline-caption">
+                    <strong>2023:</strong> Estar juntos se volvio indispensable y llego la promesa 💞
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_7306.JPG" alt="2024" />
+                <div class="timeline-caption">
+                    <strong>2024:</strong> Decidiste venir a vivir juntos 👫
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_6867.JPEG" alt="2025" />
+                <div class="timeline-caption">
+                    <strong>2025:</strong> Nuestro compromiso 💍
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_5267.JPEG" alt="2026" />
+                <div class="timeline-caption">
+                    <strong>2026:</strong> Nos esperan grandes cosas, tu vestida de blanco en el altar 👰
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_7191.JPEG" alt="2027" />
+                <div class="timeline-caption">
+                    <strong>2027:</strong> Mas conciertos? Viajes? ✈️🎤
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_8377.JPG" alt="2028" />
+                <div class="timeline-caption">
+                    <strong>2028:</strong> Nueva aventura 🚗
+                </div>
+            </div>
+            <div class="timeline-item">
+                <img src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0248.JPG" alt="2029" />
+                <div class="timeline-caption">
+                    <strong>2029 y hasta que la muerte nos separe:</strong> ¡Siempre juntos! 💖
+                </div>
+            </div>
         </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/Foto2.JPEG"
-            alt="2021"
-          />
-          <div class="timeline-caption">
-            <strong>2021:</strong> Pandemia no nos dejo ver muy seguido 😷
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_6008.JPEG"
-            alt="2022"
-          />
-          <div class="timeline-caption">
-            <strong>2022:</strong> Por fin salidas y podia visitarte 🥰
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_2251.JPEG"
-            alt="2023"
-          />
-          <div class="timeline-caption">
-            <strong>2023:</strong> Estar juntos se volvio indispensable y llego la promesa 💞
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_7306.JPG"
-            alt="2024"
-          />
-          <div class="timeline-caption">
-            <strong>2024:</strong> Decidiste venir a vivir juntos 👫 
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_6867.JPEG"
-            alt="2025"
-          />
-          <div class="timeline-caption">
-            <strong>2025:</strong> Nuestro compromiso 💍
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_5267.JPEG"
-            alt="2026"
-          />
-          <div class="timeline-caption">
-            <strong>2026:</strong> Nos esperan grandes cosas, tu vestida de blanco en el altar 👰
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_7191.JPEG"
-            alt="2027"
-          />
-          <div class="timeline-caption">
-            <strong>2027:</strong> Mas conciertos? Viajes? ✈️🎤
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_8377.JPG"
-            alt="2028"
-          />
-          <div class="timeline-caption">
-            <strong>2028:</strong> Nueva aventura 🚗
-          </div>
-        </div>
-        <div class="timeline-item">
-          <img
-            src="https://github.com/MonkeyDmax/Aniversario/raw/main/fotos/IMG_0248.JPG"
-            alt="2029"
-          />
-          <div class="timeline-caption">
-            <strong>2029 y hasta que la muerte nos separe:</strong> ¡Siempre juntos! 💖
-          </div>
-        </div>
-      </div>
-      <button class="timeline-btn right" onclick="plusTimeline(1)">
-        &#8594;
-      </button>
+        <button class="timeline-btn right" onclick="plusTimeline(1)">
+            &#8594;
+        </button>
     </div>
 
     <div class="hearts">
-      <div class="heart" style="left: 0%"></div>
-      <div class="heart" style="left: 10%"></div>
-      <div class="heart" style="left: 20%"></div>
-      <div class="heart" style="left: 30%"></div>
-      <div class="heart" style="left: 40%"></div>
-      <div class="heart" style="left: 50%"></div>
-      <div class="heart" style="left: 60%"></div>
-      <div class="heart" style="left: 70%"></div>
-      <div class="heart" style="left: 80%"></div>
-      <div class="heart" style="left: 90%"></div>
+        <div class="heart" style="left: 0%"></div>
+        <div class="heart" style="left: 10%"></div>
+        <div class="heart" style="left: 20%"></div>
+        <div class="heart" style="left: 30%"></div>
+        <div class="heart" style="left: 40%"></div>
+        <div class="heart" style="left: 50%"></div>
+        <div class="heart" style="left: 60%"></div>
+        <div class="heart" style="left: 70%"></div>
+        <div class="heart" style="left: 80%"></div>
+        <div class="heart" style="left: 90%"></div>
     </div>
     <script>
-      // Carrusel principal
-      let mainSlide = 0;
-      const mainSlides = document.querySelectorAll("#mainCarousel img");
-      function showMainSlide(n) {
-        mainSlides.forEach((img, i) => {
-          img.classList.toggle("active", i === n);
-        });
-      }
-      function plusMainSlide(n) {
-        mainSlide = (mainSlide + n + mainSlides.length) % mainSlides.length;
-        showMainSlide(mainSlide);
-      }
-      setInterval(() => {
-        plusMainSlide(1);
-      }, 5000);
+        // Carrusel principal
+        let mainSlide = 0;
+        const mainSlides = document.querySelectorAll("#mainCarousel img");
+        function showMainSlide(n) {
+            mainSlides.forEach((img, i) => {
+                img.classList.toggle("active", i === n);
+            });
+        }
+        function plusMainSlide(n) {
+            mainSlide = (mainSlide + n + mainSlides.length) % mainSlides.length;
+            showMainSlide(mainSlide);
+        }
+        setInterval(() => {
+            plusMainSlide(1);
+        }, 5000);
 
-      // Timeline visual
-      let timelineIndex = 0;
-      const timelineTrack = document.getElementById("timelineTrack");
-      const timelineItems = timelineTrack.querySelectorAll(".timeline-item");
-      function visibleTimeline() {
-        if (window.innerWidth < 900) return 3;
-        return 5;
-      }
-      function showTimeline(n) {
-        const itemWidth = timelineItems[0].offsetWidth + 18; // ancho + gap
-        timelineTrack.style.transform = `translateX(${-n * itemWidth}px)`;
-      }
-      function plusTimeline(n) {
-        const maxIndex = Math.max(0, timelineItems.length - visibleTimeline());
-        timelineIndex = Math.max(0, Math.min(timelineIndex + n, maxIndex));
+        // Timeline visual
+        let timelineIndex = 0;
+        const timelineTrack = document.getElementById("timelineTrack");
+        const timelineItems = timelineTrack.querySelectorAll(".timeline-item");
+        function visibleTimeline() {
+            if (window.innerWidth < 900) return 3;
+            return 5;
+        }
+        function showTimeline(n) {
+            const itemWidth = timelineItems[0].offsetWidth + 18; // ancho + gap
+            timelineTrack.style.transform = `translateX(${-n * itemWidth}px)`;
+        }
+        function plusTimeline(n) {
+            const maxIndex = Math.max(0, timelineItems.length - visibleTimeline());
+            timelineIndex = Math.max(0, Math.min(timelineIndex + n, maxIndex));
+            showTimeline(timelineIndex);
+        }
+        window.addEventListener("resize", () => showTimeline(timelineIndex));
+        showMainSlide(mainSlide);
         showTimeline(timelineIndex);
-      }
-      window.addEventListener("resize", () => showTimeline(timelineIndex));
-      showMainSlide(mainSlide);
-      showTimeline(timelineIndex);
     </script>
-  </body>
+</body>
+
 </html>
