@@ -29,11 +29,13 @@
 
       .main-carousel img {
         width: 100%;
-        height: 340px;
-        object-fit: cover;
+        height: 600px;
+        max-height: 80vh;
+        object-fit: contain;
         border-radius: 18px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         display: none;
+        background: #fff;
       }
 
       .main-carousel img.active {
@@ -146,7 +148,7 @@
 
       @media (max-width: 900px) {
         .main-carousel img {
-          height: 220px;
+          height: 350px;
         }
 
         .timeline-item {
@@ -220,13 +222,12 @@
   </head>
 
   <body>
-    <audio autoplay loop>
-      <source
-        src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"
-        type="audio/mpeg"
-      />
-      Tu navegador no soporta audio HTML5.
-    </audio>
+    <!-- AUDIO de YouTube: ver NOTA abajo -->
+    <!-- No puedes reproducir directamente un video de YouTube como audio con la etiqueta <audio>. Debes descargar el mp3 y subirlo a tu repo o usar un enlace mp3 directo. -->
+    <!-- Si solo quieres mostrar el video/música embebida: -->
+    <iframe width="0" height="0" style="display:none;" src="https://www.youtube.com/embed/p_1Osm5xE5Y?autoplay=1&loop=1&playlist=p_1Osm5xE5Y" allow="autoplay"></iframe>
+    <!-- Si subes el mp3, reemplaza el <audio> de abajo por tu ruta mp3 -->
+
     <h2>💖 Feliz Aniversario 💖</h2>
 
     <!-- Carrusel principal de 10 fotos -->
@@ -288,19 +289,11 @@
         perfecto, lo sé, y a veces me equivoco más de lo que debería. Pero no
         quiero ponerte excusas ni pretextos, porque tú mereces lo mejor de mí y
         lucharé cada día para dártelo.
-      </p>
-      <p class="cita">
-        "Amar no es mirarse el uno al otro, es mirar juntos en la misma
-        dirección." <br />— Antoine de Saint-Exupéry
-      </p>
+      </p>    
       <p>
         Quiero que sepas que estoy decidido a ser mejor, no solo por mí, sino
         porque tú lo mereces. Porque quiero ganarme tu confianza y construir
         juntos una familia llena de amor, respeto y felicidad.
-      </p>
-      <p class="cita">
-        "Te amo no por lo que eres, sino por lo que soy cuando estoy contigo."
-        <br />— Gabriel García Márquez
       </p>
       <p>
         A tu lado soy feliz, a tu lado todo es posible. Gracias por ser mi
@@ -313,9 +306,13 @@
         Aristóteles
       </p>
       <p>
-        Te amo hoy y siempre. Eres mi mayor alegría, mi mejor elección, mi
+        Te amo hoy y siempre ❤️. Eres mi mayor alegría, mi mejor elección, mi
         hogar. ¡Feliz mesesaurio, amor de mi vida! Prometo seguir creciendo,
         aprendiendo y amándote cada día más.
+      </p>
+      <p class="cita">
+        "Amar no es mirarse el uno al otro, es mirar juntos en la misma
+        dirección." <br />— Antoine de Saint-Exupéry
       </p>
     </div>
 
