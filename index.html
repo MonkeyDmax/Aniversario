@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Aniversario</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #5c2c2c;
+        }
+        h2 {
+            color: #c0392b;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        /* Carrusel */
+        .carousel {
+            position: relative;
+            width: 320px;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            font-size: 24px;
+            padding: 5px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            color: #c0392b;
+        }
+        .carousel-btn.left {
+            left: 0;
+        }
+        .carousel-btn.right {
+            right: 0;
+        }
+        /* Corazones flotantes */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 6s infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    <h2>💖 Feliz Aniversario 💖</h2>
+    <p>Desde aquel mágico 27 de julio de 2020, cada momento contigo ha sido un regalo. 
+    Gracias por llenar mi vida de amor, risas y memorias inolvidables. 
+    Hoy celebramos nuestro camino juntos, y el compromiso que nos une para siempre. Te amo. 💍</p>
+
+    <h3>📸 Nuestra Galería</h3>
+    <div class="carousel" id="carousel">
+        <button class="carousel-btn left" onclick="plusSlide(-1)">&#8592;</button>
+        <img src="data:image/jpeg;base64,/9j/4AAQSk... (tu foto base64 aquí)" class="active" alt="Foto 1">
+        <!-- Puedes agregar más imágenes en base64 o links aquí -->
+        <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=600&q=80" alt="Foto 2">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Foto 3">
+        <button class="carousel-btn right" onclick="plusSlide(1)">&#8594;</button>
+    </div>
+
+    <h3>🕰️ Nuestra Historia</h3>
+    <ul>
+        <li><strong>2020:</strong> Inicio de nuestro noviazgo 💕</li>
+        <li><strong>2021:</strong> 1 año juntos 🎉</li>
+        <li><strong>2022:</strong> 2 años de amor 🌹</li>
+        <li><strong>2023:</strong> 3 años de aventuras ✨</li>
+        <li><strong>2024:</strong> 4 años creciendo juntos 💫</li>
+        <li><strong>2025:</strong> 5 años y el compromiso formal 💍</li>
+    </ul>
+    <div class="hearts">
+        <div class="heart" style="left:0%"></div>
+        <div class="heart" style="left:10%"></div>
+        <div class="heart" style="left:20%"></div>
+        <div class="heart" style="left:30%"></div>
+        <div class="heart" style="left:40%"></div>
+        <div class="heart" style="left:50%"></div>
+        <div class="heart" style="left:60%"></div>
+        <div class="heart" style="left:70%"></div>
+        <div class="heart" style="left:80%"></div>
+        <div class="heart" style="left:90%"></div>
+    </div>
+    <script>
+        // Carrusel simple
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel img');
+        function showSlide(n) {
+            slides.forEach((img, i) => {
+                img.classList.toggle('active', i === n);
+            });
+        }
+        function plusSlide(n) {
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        // Opcional: Avance automático del carrusel cada 5 segundos
+        setInterval(() => { plusSlide(1); }, 5000);
+    </script>
+</body>
+</html>
